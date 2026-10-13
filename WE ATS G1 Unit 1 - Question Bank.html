@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WE ATS G1 Unit 1 - Question Bank</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1d2330;--mu:#5d6678;--ac:#2f5bea;--ok:#e8f5ec;--okb:#2e8b57;--bd:#dde1ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14171f;--card:#1e222c;--tx:#e8ebf2;--mu:#9aa3b5;--ac:#7c9bff;--ok:#1b2e24;--okb:#5fc88a;--bd:#2f3542}}
+:root[data-theme=dark]{--bg:#14171f;--card:#1e222c;--tx:#e8ebf2;--mu:#9aa3b5;--ac:#7c9bff;--ok:#1b2e24;--okb:#5fc88a;--bd:#2f3542}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,Segoe UI,Arial,sans-serif}
+main{max-width:820px;margin:0 auto;padding:16px}
+h1{font-size:1.25rem;margin:8px 0 2px}.sub{color:var(--mu);font-size:.9rem;margin:0 0 12px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+button,input{font:inherit;padding:8px 14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px}
+button{cursor:pointer}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+input{width:100%;box-sizing:border-box;margin-bottom:6px}
+h2{font-size:1.15rem;margin:26px 0 4px;padding-bottom:4px;border-bottom:2px solid var(--ac)}
+h3{font-size:1rem;margin:16px 0 6px;color:var(--ac)}
+.note{background:var(--card);border:1px dashed var(--bd);border-radius:8px;padding:8px 12px;font-size:.9rem;color:var(--mu)}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:8px 0;cursor:pointer}
+.q:hover,.q:focus{border-color:var(--ac);outline:none}
+.o{color:var(--mu);margin:4px 0 0 18px;font-size:.95rem}
+.a{display:none;margin-top:8px;padding:8px 10px;background:var(--ok);border-left:4px solid var(--okb);border-radius:6px}
+.q.show .a{display:block}
+</style></head><body><main>
+<h1>WE ATS - G1 - Unit 1: Question Bank</h1>
+<p class="sub">Semester One 2026-2027 &middot; Tap a question to show or hide its answer</p>
+<div class="bar" id="tabs"></div>
+<div class="bar"><button id="sa">Show all</button><button id="ha">Hide all</button></div>
+<input id="s" type="search" placeholder="Search questions...">
+<div id="app"></div></main>
+<script>
+const TF="True or False",MC="Choose the correct answer",FB="Fill in the blanks",MT="Matching",AQ="Answer the following questions",CP="Compare";
+const L=[
+{t:"Lesson 1: Computer Hardware (TK01)",s:1,g:[
+[TF,"",[
+["A computer is an electronic device that processes information or data.","True"],
+["A workstation is mainly used by families at home to browse the internet and do homework.","False"],
+["Hardware refers to the physical, tangible components of a computer that can be seen and touched.","True"]]],
+[MC,"",[
+["What is a computer?|a) A person who repairs machines b) An electronic device that processes information or data c) A type of application software d) A printed circuit board only","B"],
+["Which type of computer is mainly used by artists to create detailed graphics and animations?|a) Desktop b) Server c) Workstation d) Mainframe","C"],
+["Which of the following is an internal hardware component?|a) Keyboard b) Monitor c) Motherboard d) Mouse","C"]]],
+[FB,"",[
+["A ______ is an electronic device that processes information or data.","computer"],
+["______ refers to the physical, tangible parts of a computer that can be seen and touched.","Hardware"],
+["The ______ is the main circuit board that connects all the components of a computer.","motherboard"]]],
+[MT,"Column B: A. Processes instructions and calculations - the 'brain' of the computer | B. Provides short-term, temporary storage for active data | C. Provides permanent storage for files | D. The main circuit board that connects all components",[
+["Motherboard","D"],["CPU","A"],["RAM","B"],["HDD/SSD","C"]]],
+[AQ,"",[
+["Define a computer and give two examples of its uses in daily life.","An electronic device that processes, stores, and retrieves data. Uses: writing, playing games, watching videos, or sending messages."],
+["Explain the difference between hardware and software.","Hardware is the physical, touchable parts of a computer. Software is programming code that tells the hardware what to do; it cannot be touched."],
+["Define a workstation and a server, giving an example of when each is used.","A workstation handles specialized work like graphics and animation (an artist). A server stores and manages data for many users (a company's emails)."],
+["Define a supercomputer and a mainframe computer, giving an example of when each is used.","A supercomputer simulates huge tasks, like weather patterns. A mainframe processes millions of transactions daily, like in a bank."],
+["List the internal hardware components found inside the computer case.","Motherboard, CPU, RAM, Storage Devices (HDD/SSD), and Power Supply Unit (PSU)."],
+["Explain the two categories of external components (peripherals) of a computer.","Input Devices put information into the computer (e.g., keyboard). Output Devices show the results (e.g., monitor)."],
+["Define the motherboard and describe its role in a computer system.","The main circuit board of the computer (also called the main logic board); it connects all components so the computer works together."],
+["List at least six parts found on a motherboard.","Any six of: CPU Socket, Chipset, RAM Slots, PCIe Slots, Storage Connectors, BIOS/UEFI Chip, CMOS Battery, Power Connectors, Rear I/O, Front Panel Headers, Fan Headers, Integrated Controllers."],
+["Explain the purpose of the CPU socket.","It is the connector on the motherboard where the CPU is installed, letting it connect and communicate with the rest of the computer."],
+["Give reasons why the CPU and motherboard must use the same socket type.","AMD and Intel use different socket designs, so a CPU only fits a motherboard with the matching socket type."],
+["Describe the difference between LGA, PGA, and BGA CPU sockets.","LGA: pins on the motherboard, used by Intel. PGA: pins on the CPU, used by older AMD. BGA: CPU soldered on permanently, used in laptops/phones."],
+["Explain why some servers and workstations use multiple CPU sockets.","Multiple CPUs give very high performance for tasks like virtualization and big databases, though they cost more and need special hardware."],
+["Define a chipset and explain its function on the motherboard.","A group of chips that controls communication between the CPU, memory, storage, and other parts, like a traffic controller."],
+["Describe the three categories of chipsets and their intended users.","High-End (Z/X series) for gamers and enthusiasts; Mainstream (H/B series) for most users; Entry-Level (B/A series) for basic, low-cost use."],
+["Explain the purpose of memory (RAM) slots and what determines a motherboard's maximum RAM capacity.","RAM slots hold memory modules; the number of slots sets the maximum RAM capacity, and each slot supports a specific type like DDR4 or DDR5."],
+["Explain the purpose of PCI Express (PCIe) expansion slots and list two devices that use them.","High-speed slots for expansion cards. Examples: graphics cards (GPUs) and NVMe SSDs."],
+["Explain the function of a disk controller and describe the SATA interface.","A disk controller manages how data moves between storage devices and the computer. SATA is the most common interface for HDDs and SSDs."],
+["Describe the function of the CMOS battery and explain what happens when it stops working.","It keeps BIOS settings like date and time saved when the computer is off. When it dies, the computer shows the wrong date/time and loses settings."],
+["Explain the role of the Power Supply Unit (PSU) in a computer.","It converts electricity from the wall outlet into stable, usable power for all computer components."],
+["Describe the four types of motherboard power connectors and their functions.","24-pin ATX: main motherboard power. CPU EPS (4/8-pin): dedicated CPU power. SATA power: for drives. Molex: older, legacy devices."],
+["Explain the purpose of back panel (Rear I/O) connectors and give three examples.","They let external devices connect to the computer. Examples: USB ports, Audio jacks, and the Ethernet port."],
+["Describe the function of fan headers and list three types.","Connectors that power and control cooling fans. Types: CPU_FAN, SYS_FAN/CHA_FAN, and CPU_OPT."],
+["Define the Central Processing Unit (CPU) and describe its three internal components.","The CPU is the computer's brain. Its parts: Memory/Storage Unit (holds data), Control Unit (controls operations), and ALU (does calculations/logic)."],
+["Explain what cache memory is and why caching is important.","Cache is small, fast storage that keeps frequently used data close to the CPU, so access is faster than using RAM."],
+["Define a Solid-State Drive (SSD) and explain why it is faster and more reliable than an HDD.","An SSD uses flash memory chips with no moving parts, making it faster and more reliable than an HDD, though more expensive."],
+["Describe the two types of water cooling.","All-in-One (AIO): pre-built, easy to install. Custom Loop: separate parts, better cooling, but more maintenance."],
+["Give reasons why cooling systems are important for modern processors.","They keep processors from overheating during demanding tasks like gaming or video editing."],
+["Explain what hybrid (input-output) devices are and give two examples.","Devices that both send and receive data. Examples: a Touch Screen and a Headset."]]],
+[CP,"",[
+["Compare between primary memory and secondary memory.","Primary memory (RAM/ROM) is fast and holds data the CPU needs right now. Secondary memory (HDD/SSD) is slower but stores data permanently."],
+["Compare between HDD and SSD in terms of speed, moving parts, and reliability.","An HDD has moving parts and is slower. An SSD has no moving parts, so it is faster and more reliable, but costs more."],
+["Compare between LGA and PGA CPU sockets.","LGA has pins on the motherboard (used by Intel). PGA has pins on the CPU (used by older AMD)."],
+["Compare between input devices and output devices, giving two examples of each.","Input devices send data in, e.g., keyboard and mouse. Output devices show results, e.g., monitor and printer."],
+["Compare between air cooling and water cooling in terms of cost, performance, and maintenance.","Air cooling is cheaper and simpler. Water cooling performs better and is quieter, but costs more and needs more maintenance."],
+["Compare between L1, L2, and L3 cache memory.","L1 is smallest and fastest, closest to the core. L2 is larger and a bit slower. L3 is largest and shared, slower than both but still faster than RAM."],
+["Compare between high-end, mainstream, and entry-level chipsets.","High-end suits gamers/professionals with overclocking. Mainstream balances cost and performance. Entry-level is the cheapest, basic option."],
+["Compare between the 24-pin ATX connector and the Molex connector.","The 24-pin ATX powers the whole motherboard (3.3V/5V/12V). Molex is an older connector for legacy hardware (5V/12V)."],
+["Compare between a wired keyboard and a wireless keyboard.","A wired keyboard connects with a USB cable. A wireless keyboard connects via radio frequency through a USB dongle."]]]
+]},
+{t:"Lesson 2: Software Types (TK01)",s:51,g:[
+[TF,"",[
+["Software is a physical, tangible part of the computer that can be touched, in the same way as hardware.","False"],
+["Application software is designed to help users perform specific tasks such as writing or calculating.","True"],
+["System software works closely with computer hardware.","True"]]],
+[MC,"",[
+["Which of the following is an example of System Software?|a) Microsoft Word b) VLC Media Player c) Windows Operating System d) WhatsApp","C"],
+["Which function of the Operating System is responsible for allocating memory to running programs?|a) Device Management b) Memory Management c) File Management d) Security","B"],
+["Which of the following is considered Application Software?|a) Device Driver b) Firmware c) Microsoft Excel d) Operating System","C"]]],
+[FB,"",[
+["______ is a set of programming code installed on the hard drive that tells the computer's hardware what to do.","Software"],
+["The two main categories of software are System Software and ______.","Application Software"],
+["An ______ acts as a link between a computer's software and hardware, managing resources such as memory and CPU time.","Operating System (OS)"]]],
+[MT,"Column B: A. Software that helps the OS communicate with hardware devices | B. Manages hardware and software resources and links them together | C. Helps maintain and optimize the computer system | D. Creates and edits documents with advanced formatting",[
+["Operating System","B"],["Device Driver","A"],["Utility Software","C"],["Word Processing Software","D"]]],
+[AQ,"",[
+["Define software and explain the difference between hardware and software.","Software is code installed on the drive that tells hardware what to do; unlike hardware, it is not physical and cannot be touched."],
+["Explain why software is important in modern daily life, giving two examples of software people use every day.","Without software, hardware can't do anything useful. Examples: Operating Systems (Windows) and Web Browsers (Chrome)."],
+["Define System Software and describe its main role in a computer.","Software that manages the computer's hardware and gives other programs a platform to run on, e.g., the operating system."],
+["List the five main types of System Software.","Operating System, Programming Language Translator, Device Drivers, Firmware, and Utility Software."],
+["Define an Operating System and explain the six main functions it performs.","An OS manages hardware/software resources and links them together. Its functions: Resource, Process, Memory, Security, File, and Device Management."],
+["Explain the Resource Management function of an Operating System.","Allocates memory, CPU time, and other resources among the programs running on the computer."],
+["Explain the Process Management function of an Operating System.","Starts, stops, and schedules programs, controlling which one uses the CPU."],
+["Explain the Security function of an Operating System.","Protects users, apps, and data using access controls and encryption."],
+["Explain the File Management function of an Operating System.","Organizes the file system, letting users create, edit, and delete files and folders."],
+["Explain the Device Management function of an Operating System.","Manages input/output devices like printers and keyboards using drivers."],
+["Describe the main features of System Software.","Works closely with hardware, uses low-level languages, is optimized for performance, and is more complex to build than application software."],
+["Define Application Software and list its two main subtypes.","Software that helps users do specific tasks. Subtypes: Programming Languages and Package Programs."],
+["Explain the concept of Programming Languages as a type of Application Software.","Tools developers use to write code that becomes new programs."],
+["Define Package Programs and give examples such as word processing and spreadsheet software.","Ready-made programs for specific tasks, e.g., Word Processing Software (documents) and Spreadsheet Software (numbers)."],
+["Describe the purpose of Multimedia Software.","Software that supports audio, video, and AR/VR content creation."],
+["Describe the purpose of a Web Browser as an application software.","Application software that provides internet access and browsing."],
+["Explain how software helps improve productivity in education, business, and communication.","Tools like word processors and communication apps save time and improve accuracy in school, work, and daily life."],
+["Write the correct steps to create a new partition using Disk Management in Windows.","Right-click unallocated space -> New Simple Volume -> Next -> set size -> Next -> pick a drive letter -> Next -> format as NTFS -> Finish."],
+["Explain the role of Device Drivers as a type of System Software.","They let the operating system communicate with hardware like a printer or graphics card."],
+["Explain the role of Firmware as a type of System Software.","Software permanently stored on hardware that controls how the device operates."]]],
+[CP,"",[
+["Compare between System Software and Application Software in terms of function, user interaction, and design complexity.","System software manages hardware with little user interaction. Application software helps users do tasks and is simpler to use."],
+["Compare between an Operating System and a Device Driver.","The OS manages the whole computer. A driver only lets the OS talk to one specific device."],
+["Compare between Word Processing Software and Spreadsheet Software.","Word processors handle text documents. Spreadsheets handle numbers and calculations."],
+["Compare between Utility Software and Programming Languages.","Utility software maintains and optimizes the system. Programming languages are used to write new programs."],
+["Compare between hardware and software.","Hardware is physical and touchable. Software is code that tells hardware what to do."],
+["Compare between a Web Browser and a Media Player as types of application software.","A browser gives internet access. A media player plays audio/video files."],
+["Compare between System Security Software and Package Programs.","Security software (antivirus) protects the system. Package programs (Word, Excel) help with everyday productivity tasks."]]]
+]},
+{t:"Lesson 3: Operating System Installation (TK01)",s:91,g:[
+[TF,"",[
+["An operating system acts as an intermediary between the user of a computer and the computer hardware.","True"],
+["Android, a mobile operating system, is based on Linux.","True"],
+["A Real-Time Operating System (RTOS) is mainly used on personal desktop computers for everyday office work.","False"]]],
+[MC,"",[
+["Which type of operating system is used in robots and medical devices requiring fast, reliable performance?|a) Mobile OS b) Real-Time Operating System (RTOS) c) Server OS d) Desktop OS","B"],
+["Which of the following is an example of a Server Operating System?|a) Android b) iOS c) Windows Server d) macOS","C"],
+["Which tool is commonly used to create a bootable USB from an ISO file?|a) Disk Management b) Rufus c) Device Manager d) Task Scheduler","B"]]],
+[FB,"",[
+["An operating system is a collection of ______ that together control the operations of a computer system.","system programs"],
+["Before installing an OS, important files should be ______ to avoid losing them during installation.","backed up"],
+["The ______ allows the user to choose the device used to start the computer, such as a USB flash drive or hard disk.","Boot Menu"]]],
+[MT,"Column B: A. Mobile operating systems designed for smartphones and tablets | B. Operating systems mainly used on personal computers and laptops | C. Server operating systems for managing networks and large systems | D. Operating systems built for specific tasks requiring fast, reliable performance",[
+["Windows / macOS / Linux","B"],["iOS / Android","A"],["RTOS","D"],["Windows Server / RHEL","C"]]],
+[AQ,"",[
+["Define an Operating System and explain its importance in a computer system.","A program between the user and the hardware; a set of system programs that control the computer. Without it, you can't use the device."],
+["Describe the four types of operating systems based on the devices they run on.","Computer OS (PCs/laptops), Mobile OS (phones/tablets), Special-use OS/RTOS (robots, medical devices), and Server OS (networks, large systems)."],
+["Give one example of an operating system used for computers and one used for mobile devices.","Computer: Windows, macOS, or Linux. Mobile: iOS or Android."],
+["Explain why users may need to install or reinstall an operating system, giving three reasons.","Any three: new computer setup, system corruption, slow performance, removing viruses, upgrading, or switching OS."],
+["Explain the Process Management function of an operating system.","Manages running programs and controls CPU usage so tasks run smoothly."],
+["Explain the Memory Management function of an operating system.","Allocates and frees memory for programs to keep the system running efficiently."],
+["Explain the File System Management function of an operating system.","Organizes files and folders, letting users create, save, edit, and delete them."],
+["Explain the Device Management function of an operating system.","Controls communication with hardware like printers and storage drives, using drivers."],
+["Explain the Security and Protection function of an operating system.","Protects data from unauthorized access using accounts, passwords, and permissions."],
+["Explain the Performance Monitoring function of an operating system.","Tracks system performance and resource usage to keep the computer efficient."],
+["Explain the Error Detection and Handling function of an operating system.","Detects system errors and helps prevent or fix problems to keep the system stable."],
+["Why are system requirements important to check before installing an operating system?","If the computer doesn't meet them, the OS may not work at all or may run very slowly."],
+["List the requirements that should be checked before installing an operating system.","Check hardware, verify architecture, back up files, prepare installation media, check BIOS/UEFI, use stable power, have internet, and a product key."],
+["Define a bootable USB and explain its importance during OS installation.","A USB flash drive with OS installation files, used to install or repair an operating system."],
+["Define BIOS and explain its role before an operating system loads.","Firmware on the motherboard that starts the computer and checks hardware before the OS loads."],
+["Explain the purpose of the Boot Menu during OS installation.","Lets the user pick which device to start from, like a USB drive or hard disk."],
+["Describe the general steps followed to install an operating system using a bootable USB, from powering on the computer to finishing setup.","Insert the USB, boot into BIOS, set the USB as first boot device, save & reboot, follow the installer (accept license, choose partition, wait), then set region, keyboard, name, and password."],
+["Define drivers and give three examples of driver types.","Programs letting the OS talk to hardware. Examples: Graphics, Sound, and Network drivers."],
+["Explain why drivers are important after installing an operating system.","They improve performance, enable device functions, fix problems, and improve stability."],
+["Describe the different methods used for installing drivers.","From the driver CD, the manufacturer's website, Device Manager, or driver software like Driver Pack Solution."]]],
+[CP,"",[
+["Compare between Computer Operating Systems, Mobile Operating Systems, and Server Operating Systems, giving an example of each.","Computer OS runs PCs (Windows). Mobile OS runs phones (Android). Server OS manages networks (Windows Server).",126],
+["Compare between installing an operating system on a new computer and reinstalling it on an existing one.","A new install sets up an OS for the first time. Reinstalling fixes corruption, malware, or slow performance.",124],
+["Compare between BIOS and the Boot Menu.","BIOS starts the computer and checks hardware. The Boot Menu lets the user pick the startup device."],
+["Compare between the roles of drivers and the operating system itself.","The OS manages the whole system. Drivers let it talk to one specific device."],
+["Compare between installing drivers using a driver CD and downloading them from the manufacturer's website.","The driver CD has older drivers from manufacture time. The website usually has the latest versions."],
+["Compare between a slow-performing computer before and after reinstalling its operating system.","Before: slow and buggy from clutter or malware. After: faster and more reliable, starting fresh."]]]
+]},
+{t:"Lesson 4: Managing Folders and File Structures (TK01)",s:129,g:[
+[TF,"",[
+["A file extension is the letters that appear after the dot in a file name, such as .jpg or .exe.","True"],
+["An absolute path shows a file's location based only on the current folder.","False"],
+["NTFS is the main file system used by modern Windows operating systems.","True"]]],
+[MC,"",[
+["Which of the following is a document file extension?|a) .mp3 b) .exe c) .docx d) .zip","C"],
+["Which file system is mainly used with Linux-based computers?|a) NTFS b) FAT32 c) HFS+ d) EXT","D"],
+["Which type of file is used to reduce file size and group multiple files together?|a) Executable File b) Compressed File c) System File d) Image File","B"]]],
+[FB,"",[
+["A ______ is a container that holds files, organized like the physical folders used to keep papers.","folder"],
+["A file extension helps the operating system identify the file type and choose the correct ______ to open it.","program"],
+["The address that shows the location of a file or folder on a computer is called a ______.","file path"]]],
+[MT,"Column B: A. Document file | B. Image file | C. Audio file | D. Video file",[
+[".docx","A"],[".jpg","B"],[".mp3","C"],[".mp4","D"]]],
+[AQ,"",[
+["Define files and folders and explain their importance in a computer system.","A file holds one item of data (a document, picture, etc.). A folder holds files together to keep them organized."],
+["What is a file extension? Explain its importance with suitable examples.","The letters after the dot in a filename (e.g., .jpg) that tell the OS which program should open it."],
+["Describe the common types of files mentioned in the unit, giving one example extension for each.","Document (.docx), Image (.jpg), Audio (.mp3), Video (.mp4), Executable (.exe), Compressed (.zip), System (.dll)."],
+["Explain the importance of organizing files and folders on a computer.","It makes files easy to find, keeps the computer organized, saves time, and protects data."],
+["Write the correct steps for creating a new folder in Windows.","Right-click -> New -> Folder -> type the name -> press Enter."],
+["Write the correct steps for creating a new file in Windows.","Right-click -> New -> choose the file type -> type the name -> press Enter."],
+["Explain the two methods used to rename a file or folder in Windows.","Right-click -> Rename -> type name -> Enter, or select the file -> press F2 -> type name -> Enter."],
+["Why is proper naming of files and folders important? Mention at least three benefits.","Faster searching, better organization, easier sharing, and improved productivity."],
+["Define a file path and explain what each part of the path C:\\Users\\Student\\Documents\\Homework.docx represents.","The address of a file's location. Here: C: is the drive, Users/Documents are folders, Homework.docx is the file."],
+["Define an Absolute Path and give one example.","The full location of a file starting from the drive, e.g., C:\\Projects\\HTML\\index.html."],
+["Define a Relative Path and give one example.","The file's location based on the current folder, e.g., images\\photo.jpg."],
+["Explain the concept of a directory structure and its importance in organizing data.","How folders and subfolders are arranged; it makes searching easier and avoids confusion."],
+["What is a file system? Explain its role in managing data on storage devices.","Part of the OS that organizes, stores, and manages files and folders on storage devices."],
+["Describe the main components of a file system.","User Applications, Logical File System, Virtual File System (VFS), Physical File System, and Partitions."],
+["Describe the characteristics of NTFS and explain why it is considered more advanced than FAT.","Windows' main file system; offers security, compression, and encryption - better than older FAT systems."],
+["Describe the key features and limitations of FAT32.","Very compatible across devices; limited to 4 GB files and 2 TB partitions."],
+["Describe the key features of exFAT and explain where it is commonly used.","No 4 GB file limit, optimized for flash storage; used on large USB drives and external SSDs."],
+["Explain the difference between HFS+ and EXT file systems and mention the operating systems that use them.","HFS+ is for Mac computers. EXT is for Linux computers. Windows needs special software to read either."],
+["Write the correct steps for adding a new user account to a Windows computer.","Settings -> Accounts -> Family & other users -> Add someone else -> 'I don't have this person's info' -> add without a Microsoft account -> set username/password."]]],
+[CP,"",[
+["Compare between Document Files, Image Files, Audio Files, and Video Files, giving one example extension for each.","Document (.docx) for text, Image (.jpg) for pictures, Audio (.mp3) for sound, Video (.mp4) for clips."],
+["Compare between an Absolute Path and a Relative Path.","An absolute path starts from the drive. A relative path is based on the current folder."],
+["Compare between NTFS, FAT32, and exFAT in terms of file size support, compatibility, and usage.","NTFS: huge files, best for Windows drives. FAT32: max 4GB files, most compatible. exFAT: large files, great for USB drives."],
+["Compare between renaming a file using the right-click method and using the F2 keyboard shortcut.","Right-click -> Rename uses the mouse. F2 does it from the keyboard - both give the same result."],
+["Compare between a well-organized folder structure and an unorganized one in terms of productivity.","Organized folders save time and protect data. Unorganized ones waste time and risk losing files."],
+["Compare between HFS+ and EXT file systems.","HFS+ is Mac's file system. EXT is Linux's file system."],
+["Compare between a File and a Folder.","A file holds one piece of data. A folder holds and organizes files."]]]
+]},
+{t:"Lesson 5: BIOS / UEFI & Boot Order (TK01)",s:168,g:[
+[TF,"",[
+["BIOS is firmware stored on a chip located on the motherboard.","True"],
+["UEFI provides a graphical interface with mouse support, unlike traditional BIOS.","True"],
+["POST stands for Power-On Self-Test and checks hardware before the operating system loads.","True"]]],
+[MC,"",[
+["What is the main purpose of BIOS during computer startup?|a) Play media files b) Check hardware and start the operating system c) Create partitions d) Manage user accounts","B"],
+["Which firmware is considered the modern replacement for BIOS?|a) POST b) GPT c) UEFI d) CMOS","C"],
+["Which partitioning system is mainly used with UEFI?|a) FAT32 b) NTFS c) MBR d) GPT","D"]]],
+[FB,"",[
+["______ is a diagnostic process performed by BIOS when the computer is powered on, checking essential hardware components.","POST (Power-On Self-Test)"],
+["After completing POST, the BIOS locates and starts the ______, which then loads the operating system into memory.","bootstrap loader / bootloader"],
+["______ (Unified Extensible Firmware Interface) is the modern replacement for BIOS.","UEFI"]]],
+[MT,"Column B: A. Locates and starts loading the OS after POST completes | B. Prevents unauthorized operating systems from loading during startup | C. Older partitioning system used mainly with BIOS | D. Checks and initializes essential hardware components at power-on",[
+["POST","D"],["Bootstrap Loader","A"],["Secure Boot","B"],["MBR","C"]]],
+[AQ,"",[
+["Define BIOS and explain its main role during computer startup.","Firmware on the motherboard; the first software to run, checking hardware before the OS loads."],
+["Explain the function of POST (Power-On Self-Test) and list three hardware components it checks.","Checks hardware works correctly at power-on. Checks include RAM, the CPU, and storage devices."],
+["Explain the role of the Bootstrap Loader after POST is completed.","It finds and starts the bootloader, which then loads the operating system into memory."],
+["Describe the Hardware Initialization function of BIOS.","BIOS prepares hardware for use; the OS then loads the drivers it needs."],
+["Explain the System and Hardware Configuration settings that BIOS allows users to configure.","Users can set the date, time, boot order, and security options."],
+["Describe the characteristics of BIOS.","Text-based interface, limited storage support, slower boot, used on older systems."],
+["Mention the advantages and disadvantages of BIOS.","Pros: simple, compatible with old hardware, stable. Cons: 2TB limit, slow startup, no graphics, weaker security."],
+["Define UEFI and explain why it was developed.","The modern replacement for BIOS, built to fix its limitations and add better features."],
+["Explain three advantages of UEFI over traditional BIOS.","Faster boot, a graphical interface with mouse support, and support for drives larger than 2TB."],
+["Define Secure Boot and explain its purpose.","A UEFI security feature that stops unauthorized operating systems and malware from loading at startup."],
+["Describe two benefits of Secure Boot.","Better system security and protection from rootkits and boot viruses."],
+["Define MBR and describe its main characteristics.","An older system used with BIOS; supports up to 2TB drives and 4 primary partitions."],
+["Define GPT and describe its main characteristics.","A modern system used with UEFI; supports very large drives and many more partitions."],
+["Explain how a user can access BIOS or UEFI settings during startup, giving three common keys.","Press Delete, F2, or F10 during startup (the key depends on the manufacturer)."],
+["Describe the function keys used inside BIOS setup (F1, Esc, Enter, F9, F10).","F1: help. Esc: exit. Enter: select/open a menu. F9: reset to defaults. F10: save and exit."],
+["Explain how to change the Boot Order Configuration in BIOS.","On the Boot page, use + and - to reorder devices, then press F10 to save and reboot."]]],
+[CP,"",[
+["Compare between BIOS and UEFI in terms of interface, boot speed, security, and storage support.","BIOS: text interface, slower, less secure, 2TB limit. UEFI: graphical, faster, Secure Boot, supports huge drives."],
+["Compare between MBR and GPT partitioning systems.","MBR: older, 2TB limit, 4 partitions. GPT: modern, huge drives, many more partitions."],
+["Compare between the advantages and disadvantages of BIOS.","Pros: simple and compatible with old hardware. Cons: slow, limited storage and security."],
+["Compare between a Secure Boot-enabled system and one without Secure Boot.","With Secure Boot: blocks unauthorized OS's and malware. Without it: more open to boot attacks."],
+["Compare between the Boot Menu and the BIOS Setup screen.","The Boot Menu picks a device for one boot. The BIOS Setup screen permanently changes settings."],
+["Compare between older systems that use BIOS and modern systems that use UEFI.","Older BIOS systems boot slower with MBR. Modern UEFI systems boot faster with GPT and stronger security."]]]
+]}
+];
+const app=document.getElementById("app"),tabs=document.getElementById("tabs");let cur=-1;
+function lesson(l){let n=l.s,h=`<h2>${l.t}</h2>`;l.g.forEach(([t,note,items])=>{h+=`<h3>${t}</h3>`+(note?`<p class="note">${note}</p>`:"");items.forEach(([q,a,m])=>{if(m)n=m;const[qt,o]=q.split("|");h+=`<div class="q" tabindex="0" role="button"><b>Q${n++}.</b> ${qt}${o?`<div class="o">${o}</div>`:""}<div class="a"><b>Answer:</b> ${a}</div></div>`})});return h}
+function render(i){cur=i;app.innerHTML=(i<0?L:[L[i]]).map(lesson).join("");
+[...tabs.children].forEach((b,k)=>b.className=k===i+1?"on":"");filter()}
+function filter(){const v=document.getElementById("s").value.toLowerCase();app.querySelectorAll(".q").forEach(q=>q.style.display=q.textContent.toLowerCase().includes(v)?"":"none")}
+["All lessons",...L.map(l=>l.t.split(":")[0])].forEach((t,k)=>{const b=document.createElement("button");b.textContent=t;b.onclick=()=>render(k-1);tabs.appendChild(b)});
+app.addEventListener("click",e=>{const q=e.target.closest(".q");if(q)q.classList.toggle("show")});
+app.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){const q=e.target.closest(".q");if(q){e.preventDefault();q.classList.toggle("show")}}});
+document.getElementById("s").oninput=filter;
+document.getElementById("sa").onclick=()=>app.querySelectorAll(".q").forEach(q=>q.classList.add("show"));
+document.getElementById("ha").onclick=()=>app.querySelectorAll(".q").forEach(q=>q.classList.remove("show"));
+render(-1);
+</script></body></html>
